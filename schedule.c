@@ -36,7 +36,6 @@ typedef enum scheduleType {
 } scheduleType_e;
 
 
-
 //structure definition for a schedule info.
 typedef struct schedInfo
 {
@@ -48,12 +47,13 @@ typedef struct schedInfo
 } schedInfo_t;
 
 
+
 void sched_printTypes(void) 
 {
 	int i;
 	
 	for (i=0;i<MAX_TYPE;i++) {
-		printf("- %s\n", i, type_string[i]);
+		printf("- %s\n", type_string[i]);
 	}
 }
 
@@ -84,12 +84,13 @@ void sched_print(void* obj)
 void* sched_genSchedInfo(char* name, char* place, int type, int month, int day)
 {
 	schedInfo_t* schedPtr;
-	
+	schedPtr = (schedInfo_t*)malloc(sizeof(schedInfo_t));
 	//error handler
-
+	if(schedPtr==NULL) {
+		printf("error\n");
+		return NULL;
+	}
 	//allocate memory and set the member variables
-	
-	
 	return (void*)schedPtr;
 }
 
