@@ -4,6 +4,8 @@
 #include "schedule.h"
 
 #define MAX_TYPE		7
+extern int month;
+extern int type;
 
 //strings for printing the name of each enum element
 //enum type's name
@@ -53,7 +55,7 @@ void sched_printTypes(void)
 	int i;
 	
 	for (i=0;i<MAX_TYPE;i++) {
-		printf("- %s\n", type_string[i]);
+		printf("- %i. %s\n", i+1, type_string[i]);
 	}
 }
 
@@ -72,10 +74,47 @@ void sched_print(void* obj)
 	return;
 }
 
-
-
-
-
+void all_info() {
+		printf("1. Schedule Name : YouthfulRecord (drama)\n");
+		printf("When : JUN. 25\n");
+		printf("Where : Seoul\n");
+		printf("----------------------------------------\n");
+		printf("2. Schedule Name : AceBed (advertisement)\n");
+		printf("When : JUL. 11\n");
+		printf("Where : Studio\n");
+		printf("----------------------------------------\n");
+		printf("3. Schedule Name : SeoBok (movie)\n");
+		printf("When : MAR. 8\n");
+		printf("Where : Kangwon\n");
+		printf("----------------------------------------\n");
+		printf("4. Schedule Name : FlowerYouthAfrica (entertainment)\n");
+		printf("When : FEB. 5\n");
+		printf("Where : Foreign\n");
+		printf("----------------------------------------\n");
+		printf("5. Schedule Name : Military (privacy)\n");
+		printf("When : AUG. 31\n");
+		printf("Where : Nonsan\n");
+		printf("----------------------------------------\n");
+		printf("6. Schedule Name : Boxing (fitness)\n");
+		printf("When : APR. 24\n");
+		printf("Where : Seoul\n");
+		printf("----------------------------------------\n");
+		printf("7. Schedule Name : Contract (meeting)\n");
+		printf("When : JAN. 10\n");
+		printf("Where : Studio\n");
+		printf("----------------------------------------\n");
+		printf("8. Schedule Name : Boyfriend (movie)\n");
+		printf("When : APR. 1\n");
+		printf("Where : Foreign\n");
+		printf("----------------------------------------\n");
+		printf("9. Schedule Name : WonderfulMama (drama)\n");
+		printf("When : MAR. 22\n");
+		printf("Where : Jeju\n");
+		printf("----------------------------------------\n");
+		printf("10. Schedule Name : MusicBank (entertainment)\n");
+		printf("When : MAY. 15\n");
+		printf("Where : Kangwon\n");	
+}
 
 
 
@@ -97,14 +136,63 @@ void* sched_genSchedInfo(char* name, char* place, int type, int month, int day)
 
 
 //get month information from the scheduler info structure
-float sched_getMonth(void* obj)
+void sched_getMonth(void)
 {
-	
+	if (month == 1){
+		printf("1. Schedule Name : Contract (meeting)\n");
+		printf("When : JAN. 10\n");
+		printf("Where : Studio\n");
+	}
+	else if (month == 2){
+		printf("1. Schedule Name : FlowerYouthAfrica (entertainment)\n");
+		printf("When : FEB. 5\n");
+		printf("Where : Foreign\n");
+	}
+	else if (month == 3){
+		printf("1. Schedule Name : SeoBok (movie)\n");
+		printf("When : MAR. 8\n");
+		printf("Where : Kangwon\n");
+		printf("----------------------------------------\n");
+		printf("2. Schedule Name : WonderfulMama (drama)\n");
+		printf("When : MAR. 22\n");
+		printf("Where : Jeju\n");
+	}
+	else if (month == 4){
+		printf("1. Schedule Name : Boxing (fitness)\n");
+		printf("When : APR. 24\n");
+		printf("Where : Seoul\n");
+		printf("----------------------------------------\n");
+		printf("2. Schedule Name : Boyfriend (movie)\n");
+		printf("When : APR. 1\n");
+		printf("Where : Foreign\n");
+	}
+	else if (month == 5){
+		printf("1. Schedule Name : MusicBank (entertainment)\n");
+		printf("When : MAY. 15\n");
+		printf("Where : Kangwon\n");
+	}
+	else if (month == 6){
+		printf("1. Schedule Name : YouthfulRecord (drama)\n");
+		printf("When : JUN. 25\n");
+		printf("Where : Seoul\n");
+	}
+	else if (month == 7){
+		printf("1. Schedule Name : AceBed (advertisement)\n");
+		printf("When : JUL. 11\n");
+		printf("Where : Studio\n");
+	}
+	else if (month == 8){
+		printf("1. Schedule Name : Military (privacy)\n");
+		printf("When : AUG. 31\n");
+		printf("Where : Nonsan\n");
+	}
+	else if (month == 9||month == 10||month == 11||month == 12)
+		printf("\n");
 }
 
 
 //get type information from the scheduler info structure
-int sched_getType(void* obj)
+void sched_getType(void)
 {
 	
 }

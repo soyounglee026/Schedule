@@ -5,6 +5,8 @@
 #include "linkedList.h"
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
+int month;
+int type;
 
 int main(int argc, char *argv[]) {
 	
@@ -14,9 +16,7 @@ int main(int argc, char *argv[]) {
 	char name[200];
 	char place[100], typeName[100];	
 	size_t size;
-	int month;
 	int day;
-	int type;
 	void *list;
 	void *ndPtr;
 	void *schedInfo;
@@ -68,16 +68,16 @@ int main(int argc, char *argv[]) {
 			case 1: //print all the schedules
 				printf("printing all the schedules in the scheduler.....\n\n\n");
 				
-				ndPtr = list;
-				while (list_isEndNode(ndPtr) == 0)
-				{
+			//	ndPtr = list;
+			//	while (list_isEndNode(ndPtr) == 0)
+			//	{
 					//file code here -- print count and each scheduling info element
-					ndPtr = list_getNextNd(ndPtr); //get the next node from the list
-					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
+			//		ndPtr = list_getNextNd(ndPtr); //get the next node from the list
+			//		schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
 					
 					printf("----------------------------------------\n");
-					sched_print(fp);
-				}
+					all_info();
+			//	}
 				printf("----------------------------------------\n");
 				
 				break;
@@ -86,16 +86,18 @@ int main(int argc, char *argv[]) {
 				printf("which month ? : ");
 				scanf("%i", &month);
 				
-				ndPtr = list;
-				while (list_isEndNode(ndPtr) == 0)
-				{
+			//	ndPtr = list;
+			//	while (list_isEndNode(ndPtr) == 0)
+			//	{
 					//file code here -- print scheduling info elements matching to the month
-					ndPtr = list_getNextNd(ndPtr); //get the next node from the list
-					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
+			//		ndPtr = list_getNextNd(ndPtr); //get the next node from the list
+			//		schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
 					
 					//fill code this part - end
-				}
-				
+					printf("----------------------------------------\n");
+					sched_getMonth(month);
+			//	}
+				printf("----------------------------------------\n");
 				break;
 				
 			case 3:
@@ -110,27 +112,31 @@ int main(int argc, char *argv[]) {
 					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
 					
 					//fill code this part - end
+					printf("----------------------------------------\n");
 				}
-				
+				printf("----------------------------------------\n");
 				break;
 				
 			case 4:
 				printf("which type ?\n");
 				sched_printTypes();
 				printf("your choice : ");
-				scanf("%s", typeName);
+				scanf("%i", type);
 				
-				if ( typeName == 0 )
+				if ( type>=1 && type<=7 )
 				{
-					ndPtr = list;
-					while (list_isEndNode(ndPtr) == 0)
-					{
+				//	ndPtr = list;
+				//	while (list_isEndNode(ndPtr) == 0)
+				//	{
 						//file code here -- print scheduling info elements matching to the place
-						ndPtr = list_getNextNd(ndPtr); //get the next node from the list
-						schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
+				//		ndPtr = list_getNextNd(ndPtr); //get the next node from the list
+				//		schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
 						
 						//fill code this part - end
-					}
+						printf("----------------------------------------\n");
+						sched_getType(type);
+			//		}
+				printf("----------------------------------------\n");
 				}
 				else
 				{
